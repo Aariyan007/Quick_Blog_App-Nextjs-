@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { postsAPI } from '../services/serverapi';
+import { serverPostsAPI } from '../services/serverapi';
 
 
 export const QUERY_KEYS = {
