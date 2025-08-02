@@ -1,5 +1,5 @@
 
-import { serverPostsAPI } from '@/services/serverapi';
+import { serverPostsAPI } from './serverapi';
 import ClientHomePage from '../components/clientpage';
 
 export const metadata = {
@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-
+  // Fetch data on the server
   let initialPosts = [];
   let error = null;
 
@@ -17,11 +17,9 @@ export default async function HomePage() {
   } catch (err) {
     console.error('Failed to fetch initial posts:', err);
     error = err.message;
-
   }
 
   return <ClientHomePage initialPosts={initialPosts} error={error} />;
 }
 
-
-export const revalidate = 60; 
+export const revalidate = 60;
